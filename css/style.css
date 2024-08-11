@@ -27,10 +27,9 @@ header h1 {
 }
 
 main { /*seja bem vinde*/
-    margin: 20px 0;
+    margin: 40px auto 0; 
+    padding: 20px;
     text-align: center;
-    padding: 110px;
-    margin: 30px auto;
     color: #ffffff;
 }
 
@@ -51,17 +50,10 @@ footer {
 }
 
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-
 .menu {
     list-style: none; /* Remove os pontos da lista */
     padding: 0;
+    
     margin: 0;
     display: flex;
     justify-content: center; /* Centraliza os itens do menu */
@@ -94,14 +86,79 @@ table {
     transform: scale(0.98); 
 }
 
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin: 15px;
+table {
+    margin: 10px auto;
+    width: 100%; /* Faz a tabela ocupar toda a largura disponível */
+    border-collapse: collapse; 
+    background-color: #ffffff;
+    border-radius: 8px; /* Adiciona cantos arredondados na tabela */
+    overflow: hidden; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve ao redor da tabela */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-table a{
-    color:bisque;
-    text-decoration: none;
-    margin-right: 15px;
+table thead {
+    background-color: #a44397; 
+    color: #ffffff; /* Texto branco para contraste */
+}
+
+/*células no cabeçalho da tabela */
+table thead th {
+    padding: 10px; 
+    font-weight: bold; /*exto em negrito */
+    text-align: center; /* Alinha os textos no centro (id, ações, nome) */
+    font-size: 18px;
+}
+
+table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    color: #000000; /* Define a cor do texto como preta */
+    text-align: center;
+    font-family:monospace;/*cor do texto que é add na tabela*/
+    font-weight: 400;
+    font-size: 15px;
+}
+
+/* Estilo ao passar o mouse sobre uma linha da tabela */
+table tbody tr:hover {
+    background-color: #d8a4da; 
+}
+
+/* Estilo dos links na tabela */
+table a {
+    color: #a44397; /* Cor roxa para os links */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    margin-right: 15px; 
+    font-weight: bold; 
+    transition: color 0.3s; /* Transição suave para a mudança de cor */
+}
+
+/* Estilo dos links ao passar o mouse */
+table a:hover {
+    color: #000000;
+}
+
+table tbody td a {
+    display: inline-block; /* Transformar os links em botões */
+    padding: 8px 12px; 
+    background-color: #a44397; /* fundo dos botões */
+    color: #ffffff; /* texto dos botões */
+    border-radius: 4px; 
+    text-decoration: none; /* Remove o sublinhado dos links */
+    text-align: center; 
+    font-size: 14px; 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+/*ao passar o mouse */
+table tbody td a:hover {
+    background-color: #ac59ae;
+    transform: scale(1.05); /*aumento do botão */
+}
+
+/*botoes ao clicar */
+table tbody td a:active {
+    background-color: #000000; 
+    transform: scale(0.98); /* Leve redução do botão */
 }

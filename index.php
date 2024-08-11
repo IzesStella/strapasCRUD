@@ -11,7 +11,7 @@
         <h1>Bem-vindo ao Sistema de Gerenciamento de Filmes</h1>
         <nav>
             <ul class="menu">
-                <li><a href="../index.php" class="button">Home</a></li>
+                <li><a href="index.php" class="button">Home</a></li>
                 <li><a href="php/index-filme.php" class="button">Listar Filmes</a></li>
                 <li><a href="php/create-filme.php" class="button">Adicionar filme</a></li>
             </ul>
@@ -24,7 +24,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 - Sistema de Gerenciamento de Filmes</p>
+      <p>&copy; 2024 - MIA COLUCCI FILMES</>
     </footer>
 </body>
 </html>

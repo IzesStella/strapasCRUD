@@ -22,12 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar filme</title>
+    <title>CRUD filmes</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao Sistema de Gerenciamento de filmes</h1>
+        <h1>Sistema de Gerenciamento de filmes</h1>
         <nav>
         <ul class="menu">
             <li><a href="../index.php" class="button">Home</a></li>
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </main>
 
     <footer>
-        <p>&copy; 2024 - Sistema de Gerenciamento de filmes</p>
+         <p>&copy; 2024 - MIA COLUCCI FILMES</p>
     </footer>
 </body>
 </html>
