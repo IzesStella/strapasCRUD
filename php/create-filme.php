@@ -24,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <header>
         <h1>Bem-vindo ao Sistema de Gerenciamento de Filmes</h1>
         <nav>
-            <ul>
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="read-filme.php">Listar Filmes</a></li>
-                <li><a href="create-filme.php">Adicionar Filmes</a></li>
-            </ul>
+        <ul class="menu">
+            <li><a href="../index.php" class="button">Home</a></li>
+            <li><a href="read-filme.php" class="button">Listar Filmes</a></li>
+            <li><a href="create-filme.php" class="button">Adicionar Filme</a></li>
+        </ul>
         </nav>
     </header>
 

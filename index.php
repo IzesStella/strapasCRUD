@@ -10,16 +10,16 @@
     <header>
         <h1>Bem-vindo ao Sistema de Gerenciamento de Filmes</h1>
         <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="index-filme.php">Listar Filmes</a></li>
-                <li><a href="create-filme.php">Adicionar filme</a></li>
+            <ul class="menu">
+                <li><a href="../index.php" class="button">Home</a></li>
+                <li><a href="php/index-filme.php" class="button">Listar Filmes</a></li>
+                <li><a href="php/create-filme.php" class="button">Adicionar filme</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Bem-vindo ao CRUD de Filmes</h2>
+        <h2>Seja bem-vindo ao CRUD de Filmes!</h2>
         <p>Utilize o menu acima para navegar pelo sistema.</p>
     </main>
 

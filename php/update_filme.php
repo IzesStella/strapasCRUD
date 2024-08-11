@@ -29,15 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <header>
         <h1>Bem-vindo ao Sistema de Gerenciamento de filmes</h1>
         <nav>
-            <ul>
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="read-filme.php">Listar filmes</a></li>
-                <li><a href="create-filme.php">Adicionar filme</a></li>
-            </ul>
+        <ul class="menu">
+            <li><a href="../index.php" class="button">Home</a></li>
+            <li><a href="read-filme.php" class="button">Listar Filmes</a></li>
+            <li><a href="create-filme.php" class="button">Adicionar Filme</a></li>
+        </ul>
         </nav>
     </header>
 
     <main>
+        <div class="wrapper">
         <h2>Editar filme</h2>
         <form method="POST">
             <label for="nome">Nome:</label>
@@ -50,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" id="protagonista" name="protagonista" value="<?= $filmes['protagonista'] ?>" required>
             <button type="submit">Atualizar</button>
         </form>
+        </div>
     </main>
 
     <footer>

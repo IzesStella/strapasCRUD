@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6;
+    background: radial-gradient(circle, rgb(111, 140, 186), rgb(142, 163, 170));
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+header {
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+main { /*seja bem vinde*/
+    margin: 20px 0;
+    text-align: center;
+    padding: 110px;
+    margin: 30px auto;
+    color: #ffffff;
+}
+
+
+main h2 {
+    margin-bottom: 10px;
+}
+
+footer {
+   color: rgb(0, 0, 0);
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   text-align: center;
+   padding: 15px; 
+     position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-weight: bold;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+.menu {
+    list-style: none; /* Remove os pontos da lista */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu */
+}
+
+.menu li {
+    margin: 0 10px; /* Espaçamento horizontal entre itens */
+}
+
+.menu a.button {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
+    display: inline-block;
+    color: #ffffff; 
+    padding: 10px 20px; /* Espaçamento interno dos botões */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    background-color: #a44397; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    text-align: center; 
+    transition: background-color 0.3s, transform 0.2s; /* Transições */
+}
+
+.menu a.button:hover {
+    background-color: #d8a4da; /* Cor de fundo quando o mouse está sobre o botão */
+    transform: scale(1.05); /* Aumenta o botão um poquin quando o mouse está sobre ele */
+}
+
+.menu a.button:active {
+    background-color: #004080; /* Cor de fundo quando o botão é clicadx */
+    transform: scale(0.98); 
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px;
+}
+
+table a{
+    color:bisque;
+    text-decoration: none;
+    margin-right: 15px;
+}
