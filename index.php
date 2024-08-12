@@ -21,10 +21,15 @@
     <main>
         <h2>Seja bem-vindo ao CRUD de Filmes!</h2>
         <p>Utilize o menu acima para navegar pelo sistema.</p>
+        <div class="image">
+        <img src="tirandochapeu.gif" alt="tirandochapeu">
+    </div>
     </main>
 
     <footer>
-      <p>&copy; 2024 - MIA COLUCCI FILMES</>
+      <p>&copy; 2024 - MIA COLUCCI FILMES</i>
     </footer>
+
+
 </body>
 </html>

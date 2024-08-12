@@ -14,6 +14,8 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
+
+
 <body>
     <header>
         <h1>Sistema de Gerenciamento de Filmes</h1>
@@ -27,6 +29,7 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <main>
+    <div class="wrapper">
         <h2>Lista de Filmes</h2>
         <table>
             <thead>
@@ -60,5 +63,20 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <footer>
         <p>&copy; 2024 - MIA COLUCCI FILMES</p>
     </footer>
+
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteLinks = document.querySelectorAll('a[href*="delete_filme.php"]');
+        deleteLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                if (!confirm('Você realmente deseja excluir este filme?')) {
+                    event.preventDefault(); // Impede o redirecionamento se o usuário cancelar
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

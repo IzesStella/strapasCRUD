@@ -26,11 +26,51 @@ header h1 {
     margin-bottom: 10px;
 }
 
-main { /*seja bem vinde*/
-    margin: 40px auto 0; 
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+main { 
     padding: 20px;
     text-align: center;
     color: #ffffff;
+    flex: 1;
+    display: flex;
+    margin: 10px auto 0;
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+    justify-content: center;
+}
+
+#searchInput {
+    width: 300px; /* Ajuste a largura conforme necessário */
+    padding: 5px; /* Ajuste o padding para uma caixa de pesquisa menor */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Define bordas arredondadas */
+    font-size: 14px; /* Reduz o tamanho da fonte para se ajustar à caixa menor */
+    font-family: monospace;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra sutil ao redor da caixa */
+}
+
+.image {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+.image img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
 }
 
 
@@ -47,13 +87,14 @@ footer {
     width: 100%;
     bottom: 0;
     font-weight: bold;
+    align-items: center;
+    margin-top: auto; 
 }
 
 
 .menu {
     list-style: none; /* Remove os pontos da lista */
     padding: 0;
-    
     margin: 0;
     display: flex;
     justify-content: center; /* Centraliza os itens do menu */
@@ -76,6 +117,13 @@ footer {
     transition: background-color 0.3s, transform 0.2s; /* Transições */
 }
 
+@media (max-width: 480px) {
+    .menu a.button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
 .menu a.button:hover {
     background-color: #d8a4da; /* Cor de fundo quando o mouse está sobre o botão */
     transform: scale(1.05); /* Aumenta o botão um poquin quando o mouse está sobre ele */
@@ -88,18 +136,18 @@ footer {
 
 table {
     margin: 10px auto;
-    width: 100%; /* Faz a tabela ocupar toda a largura disponível */
+    width: 100%; 
     border-collapse: collapse; 
     background-color: #ffffff;
-    border-radius: 8px; /* Adiciona cantos arredondados na tabela */
+    border-radius: 8px; 
     overflow: hidden; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve ao redor da tabela */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 table thead {
     background-color: #a44397; 
-    color: #ffffff; /* Texto branco para contraste */
+    color: #ffffff;
 }
 
 /*células no cabeçalho da tabela */
@@ -120,7 +168,7 @@ table tbody td {
     font-size: 15px;
 }
 
-/* Estilo ao passar o mouse sobre uma linha da tabela */
+/* ao passar o mouse sobre uma linha da tabela */
 table tbody tr:hover {
     background-color: #d8a4da; 
 }
@@ -151,6 +199,13 @@ table tbody td a {
     transition: background-color 0.3s, transform 0.2s; 
 }
 
+@media (max-width: 480px) {
+    table tbody td a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
 /*ao passar o mouse */
 table tbody td a:hover {
     background-color: #ac59ae;
@@ -161,4 +216,87 @@ table tbody td a:hover {
 table tbody td a:active {
     background-color: #000000; 
     transform: scale(0.98); /* Leve redução do botão */
+}
+
+form {
+    width: 50%; /* Reduz a largura do formulário */
+    margin: 20px auto;
+    padding: 20px; /* Espaçamento interno do formulário */
+    background-color: rgba(164, 67, 151, 0.9); 
+    border-radius: 8px; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+    box-sizing: border-box; 
+    text-align: center; /* Centraliza o conteúdo dentro do formulário */
+    margin: 0 auto;  /*Remove a margem superior para posicionar o formulário mais próximo do cabeçalho */
+}
+
+form label {
+    display: inline-block; /* Mantém label e input na mesma linha */
+    width: 100%; 
+    margin-bottom: 8px; 
+    color: #ffffff; 
+    font-weight: bold; 
+    font-size: 16px; 
+    text-align: left;
+}
+
+form input[type="text"] {
+    width: 100%; 
+    padding: 10px; /* Espaçamento interno dos campos */
+    margin-bottom: 15px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    font-size: 16px; /* Tamanho da fonte dos campos */
+    box-sizing: border-box; 
+}
+
+form button[type="submit"] {
+    width: 40%; 
+    padding: 10px; 
+    background-color: #ffffff; 
+    color: #a44397;
+    border: none; 
+    border-radius: 4px; 
+    font-size: 16px; /* Tamanho da fonte do botão */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: background-color 0.3s, transform 0.2s; 
+    margin-top: 20px; 
+}
+
+form button[type="submit"]:hover {
+    background-color: #d8a4da; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+}
+
+form button[type="submit"]:active {
+    background-color: #a44397; /* Cor de fundo ao clicar */
+    transform: scale(0.98); 
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 95%; /* Aumenta a largura em telas menores */
+    }
+
+    form label {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    form input[type="text"], form button[type="submit"] {
+        font-size: 14px; /* Reduz o tamanho da fonte dos campos e botões */
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 100%; /* Ajusta a largura para ocupar toda a tela em dispositivos muito pequenos */
+    }
+
+    form label {
+        font-size: 12px;
+    }
+
+    form input[type="text"], form button[type="submit"] {
+        font-size: 12px; /* Reduz ainda mais o tamanho da fonte em dispositivos muito pequenos */
+    }
 }

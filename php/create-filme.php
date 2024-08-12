@@ -33,22 +33,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </header>
 
     <main>
-        <h2>Adicionar Filme</h2>
         <form method="POST">
+            <div class="form-header">
+                <h2>Adicionar Filme</h2>
+            </div>
+            <div class="form-body">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
+
             <label for="duracao">Duração:</label>
             <input type="text" id="duracao" name="duracao" required>
+
             <label for="diretor">Diretor:</label>
             <input type="text" id="diretor" name="diretor" required>
-            <label for="protagonista">Protagonista</label>
+
+            <label for="protagonista">Protagonista:</label>
             <input type="text" id="protagonista" name="protagonista" required>
+            
             <button type="submit">Adicionar</button>
+            </div>
         </form>
+
     </main>
 
     <footer>
         <p>&copy; 2024 - MIA COLUCCI FILMES</p>
     </footer>
+
 </body>
 </html>
