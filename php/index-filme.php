@@ -28,9 +28,11 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </nav>
     </header>
 
-    <main>
-    <div class="wrapper">
+    <main> 
+        <div class="wrapper">
         <h2>Lista de Filmes</h2>
+
+        <input type="text" id="searchInput" placeholder="Buscar filme..." /> <!--caixa de pesq-->
         <table>
             <thead>
                 <tr>
@@ -64,10 +66,9 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>&copy; 2024 - MIA COLUCCI FILMES</p>
     </footer>
 
-
-
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // Função para confirmação de exclusão
         const deleteLinks = document.querySelectorAll('a[href*="delete_filme.php"]');
         deleteLinks.forEach(link => {
             link.addEventListener('click', function (event) {
@@ -76,7 +77,8 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 }
             });
         });
-    });
-</script>
+        });
+
+    </script>
 </body>
 </html>

@@ -29,7 +29,7 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="wrapper">
         <h2>Lista de Filmes</h2>
 
-        <input type="text" id="searchInput" placeholder="Buscar filme..." /> <!--caixa de pesq-->
+        <input type="text" id="searchInput" placeholder="Buscar filme..." /> <!-- caixa de pesquisa -->
         <table>
             <thead>
                 <tr>
@@ -41,7 +41,7 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="filmeTableBody">
                 <?php foreach ($filmes as $filme): ?>
                     <tr>
                         <td><?= $filme['id'] ?></td>
@@ -64,9 +64,10 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>&copy; 2024 - MIA COLUCCI FILMES</p>
     </footer>
 
-    <!--Confirmação de exclusão ao tentar excluir um filme, para evitar exclusões acidentais.-->
+    <!-- Confirmação de exclusão ao tentar excluir um filme, para evitar exclusões acidentais -->
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // Função para confirmação de exclusão
         const deleteLinks = document.querySelectorAll('a[href*="delete_filme.php"]');
         deleteLinks.forEach(link => {
             link.addEventListener('click', function (event) {
@@ -75,7 +76,27 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 }
             });
         });
+
+        // Função de filtro
+        const searchInput = document.getElementById('searchInput');
+        const tableRows = document.querySelectorAll('#filmeTableBody tr');
+
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            tableRows.forEach(row => {
+                const filmName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                const directorName = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+                const protagonistName = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
+
+                if (filmName.includes(searchTerm) || directorName.includes(searchTerm) || protagonistName.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
     });
-</script>
+    </script>
 </body>
 </html>
