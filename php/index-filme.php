@@ -4,7 +4,6 @@ require_once 'bancodedado.php';
 $stmt = $pdo->query("SELECT * FROM filmes");
 $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,9 +12,6 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>CRUD Filmes</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-
-
-
 <body>
     <header>
         <h1>Sistema de Gerenciamento de Filmes</h1>
@@ -44,20 +40,26 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php foreach ($filmes as $filme): ?>
+            <tbody id="filmeTableBody">
+                <?php if (!empty($filmes)): ?>
+                    <?php foreach ($filmes as $filme): ?>
+                        <tr>
+                            <td><?= $filme['id'] ?></td>
+                            <td><?= $filme['nome'] ?></td>
+                            <td><?= $filme['duracao'] ?></td>
+                            <td><?= $filme['diretor'] ?></td>
+                            <td><?= $filme['protagonista'] ?></td>
+                            <td>
+                                <a href="update_filme.php?id=<?= $filme['id'] ?>">Editar</a>
+                                <a href="delete_filme.php?id=<?= $filme['id'] ?>" onclick="return confirm('Você realmente deseja excluir este filme?');">Excluir</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
                     <tr>
-                        <td><?= $filme['id'] ?></td>
-                        <td><?= $filme['nome'] ?></td>
-                        <td><?= $filme['duracao'] ?></td>
-                        <td><?= $filme['diretor'] ?></td>
-                        <td><?= $filme['protagonista'] ?></td>
-                        <td>
-                            <a href="update_filme.php?id=<?= $filme['id'] ?>">Editar</a>
-                            <a href="delete_filme.php?id=<?= $filme['id'] ?>">Excluir</a>
-                        </td>
+                        <td colspan="6">Nenhum filme encontrado.</td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </main>
@@ -68,17 +70,26 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Função para confirmação de exclusão
-        const deleteLinks = document.querySelectorAll('a[href*="delete_filme.php"]');
-        deleteLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                if (!confirm('Você realmente deseja excluir este filme?')) {
-                    event.preventDefault(); // Impede o redirecionamento se o usuário cancelar
-                }
-            });
-        });
-        });
+        const searchInput = document.getElementById('searchInput');
+        const tableBody = document.getElementById('filmeTableBody');
+        const tableRows = tableBody.getElementsByTagName('tr');
 
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            for (let i = 0; i < tableRows.length; i++) {
+                const row = tableRows[i];
+                const filmName = row.getElementsByTagName('td')[1].textContent.toLowerCase();
+                const directorName = row.getElementsByTagName('td')[3].textContent.toLowerCase();
+                const protagonistName = row.getElementsByTagName('td')[4].textContent.toLowerCase();
+
+                if (filmName.includes(searchTerm) || directorName.includes(searchTerm) || protagonistName.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+        });
+    });
     </script>
 </body>
-</html>
